@@ -18,6 +18,7 @@ dir_filename_output = unicode()
 textCtrl_bom = wx.TextCtrl
 textCtrl_list = wx.TextCtrl
 textCtrl_dir = wx.TextCtrl
+#test
 data_description = [u'CP', u'CL', u'FN', u'ME', u'MB', u'OM', u'CS', u'IO', u'CD', u'FD', u'KB', u'MS', u'MI', u'LP',
                     u'PB', u'CB',
                     u'VI', u'MD', u'AC', u'RA', u'CT', u'NC', u'HD', u'HM', u'HT', u'HH', u'HF', u'HX', u'MT', u'PS',
