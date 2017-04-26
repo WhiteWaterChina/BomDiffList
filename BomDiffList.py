@@ -198,9 +198,9 @@ class BomDiffList(wx.Frame):
         nrows = sheet_bom.nrows
         for item in range(0, nrows - 1):
             level = unicode(sheet_bom.cell(item, 1).value)
-            pn = sheet_bom.cell(item, 8).value
-            description = sheet_bom.cell(item, 10).value
-            description_number = sheet_bom.cell(item, 7).value
+            pn = sheet_bom.cell(item, 8).value.strip()
+            description = sheet_bom.cell(item, 10).value.strip()
+            description_number = sheet_bom.cell(item, 7).value.strip()
             if level == u'2.0' and description_number in data_description and pn not in data_bom_pn:
                 data_bom_pn.append(pn)
                 data_bom['%s' % pn] = description
@@ -209,7 +209,7 @@ class BomDiffList(wx.Frame):
         sheet_now = now_workbook.sheet_by_index(int(self.comboBox_sheet.GetValue()))
         nrows = sheet_now.nrows
         for item in range(1, nrows - 1):
-            pn_now = sheet_now.cell(item, 1).value
+            pn_now = sheet_now.cell(item, 1).value.strip()
             if pn_now not in data_now_pn:
                 data_now_pn.append(pn_now)
 
