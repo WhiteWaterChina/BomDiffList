@@ -37,7 +37,7 @@ class BomDiffList(wx.Frame):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString, pos=wx.DefaultPosition,
                           size=wx.Size(540, 342), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
 
-        self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
         bSizer7 = wx.BoxSizer(wx.VERTICAL)
 
@@ -45,7 +45,7 @@ class BomDiffList(wx.Frame):
 
         self.text_1 = wx.StaticText(self, wx.ID_ANY, u"请在如下选择需要处理的BOM文件", wx.DefaultPosition, wx.DefaultSize, 0)
         self.text_1.Wrap(-1)
-        self.text_1.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
+        # self.text_1.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
         self.text_1.SetForegroundColour(wx.Colour(255, 255, 0))
         self.text_1.SetBackgroundColour(wx.Colour(0, 128, 0))
 
@@ -68,7 +68,7 @@ class BomDiffList(wx.Frame):
         self.m_staticText4 = wx.StaticText(self, wx.ID_ANY, u"请在如下选择需要对比的兼容性列表文件（一定要符合网站上传要求）", wx.DefaultPosition,
                                            wx.DefaultSize, 0)
         self.m_staticText4.Wrap(-1)
-        self.m_staticText4.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
+        # self.m_staticText4.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
         self.m_staticText4.SetForegroundColour(wx.Colour(255, 255, 0))
         self.m_staticText4.SetBackgroundColour(wx.Colour(0, 128, 0))
 
@@ -90,7 +90,7 @@ class BomDiffList(wx.Frame):
 
         self.m_staticText5 = wx.StaticText(self, wx.ID_ANY, u"请在如下选择存放比对结果的文件路径", wx.DefaultPosition, wx.DefaultSize, 0)
         self.m_staticText5.Wrap(-1)
-        self.m_staticText5.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
+        # self.m_staticText5.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
         self.m_staticText5.SetForegroundColour(wx.Colour(255, 255, 0))
         self.m_staticText5.SetBackgroundColour(wx.Colour(0, 128, 0))
 
@@ -113,7 +113,7 @@ class BomDiffList(wx.Frame):
         self.m_staticText7 = wx.StaticText(self, wx.ID_ANY, u"请在如下选择要对比兼容性列表的第几个Sheet（从0开始算）", wx.DefaultPosition,
                                            wx.DefaultSize, 0)
         self.m_staticText7.Wrap(-1)
-        self.m_staticText7.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
+        # self.m_staticText7.SetFont(wx.Font(11, 70, 90, 90, False, "宋体"))
         self.m_staticText7.SetForegroundColour(wx.Colour(255, 255, 0))
         self.m_staticText7.SetBackgroundColour(wx.Colour(0, 128, 0))
 
@@ -162,7 +162,7 @@ class BomDiffList(wx.Frame):
     # Virtual event handlers, overide them in your derived class
     def get_filename_bom(self, event):
         global filename_original_bom
-        filename_bom_dialog = wx.FileDialog(self, message=u"选择需要对比的BOM文件", defaultDir=os.getcwd(), defaultFile="", style=wx.OPEN)
+        filename_bom_dialog = wx.FileDialog(self, message=u"选择需要对比的BOM文件", defaultDir=os.getcwd(), defaultFile="")
         if filename_bom_dialog.ShowModal() == wx.ID_OK:
             filename_bom = filename_bom_dialog.GetPath()
             self.textCtrl_bom.SetValue(filename_bom)
@@ -171,7 +171,7 @@ class BomDiffList(wx.Frame):
 
     def get_filename_now(self, event):
         global filename_original_now
-        filename_now_dialog = wx.FileDialog(self, message=u"选择需要对比的兼容性列表文件", defaultDir=os.getcwd(), defaultFile="", style=wx.OPEN)
+        filename_now_dialog = wx.FileDialog(self, message=u"选择需要对比的兼容性列表文件", defaultDir=os.getcwd(), defaultFile="")
         if filename_now_dialog.ShowModal() == wx.ID_OK:
             filename_now = filename_now_dialog.GetPath()
             self.textCtrl_list.SetValue(filename_now)
