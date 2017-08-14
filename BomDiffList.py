@@ -6,7 +6,6 @@
 #  Version:1.1
 
 import wx
-import wx.xrc
 import time
 import os
 import xlsxwriter
