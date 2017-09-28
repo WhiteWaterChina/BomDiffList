@@ -197,11 +197,11 @@ class BomDiffList(wx.Frame):
         sheet_bom = bom_workbook.sheet_by_index(0)
         nrows = sheet_bom.nrows
         for item in range(0, nrows - 1):
-            level = unicode(sheet_bom.cell(item, 1).value)
-            pn = sheet_bom.cell(item, 8).value.strip()
-            description = sheet_bom.cell(item, 10).value.strip()
-            description_number = sheet_bom.cell(item, 7).value.strip()
-            if level == u'2.0' and description_number in data_description and pn not in data_bom_pn:
+            level = unicode(sheet_bom.cell(item, 0).value)
+            pn = sheet_bom.cell(item, 4).value.strip()
+            description = sheet_bom.cell(item, 5).value.strip()
+            description_number = sheet_bom.cell(item, 3).value.strip()
+            if level == u'2' and description_number in data_description and pn not in data_bom_pn:
                 data_bom_pn.append(pn)
                 data_bom['%s' % pn] = description
 
