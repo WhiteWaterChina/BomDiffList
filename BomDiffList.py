@@ -196,7 +196,7 @@ class BomDiffList(wx.Frame):
         bom_workbook = xlrd.open_workbook(filename=filename_original_bom)
         sheet_bom = bom_workbook.sheet_by_index(0)
         nrows = sheet_bom.nrows
-        for item in range(0, nrows - 1):
+        for item in range(0, nrows):
             level = unicode(sheet_bom.cell(item, 0).value)
             pn = sheet_bom.cell(item, 4).value.strip()
             description = sheet_bom.cell(item, 5).value.strip()
@@ -208,7 +208,7 @@ class BomDiffList(wx.Frame):
         now_workbook = xlrd.open_workbook(filename=filename_original_now)
         sheet_now = now_workbook.sheet_by_index(int(self.comboBox_sheet.GetValue()))
         nrows = sheet_now.nrows
-        for item in range(1, nrows - 1):
+        for item in range(1, nrows):
             pn_now = sheet_now.cell(item, 1).value.strip()
             if pn_now not in data_now_pn:
                 data_now_pn.append(pn_now)
